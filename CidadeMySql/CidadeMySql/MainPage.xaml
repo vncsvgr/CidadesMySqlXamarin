@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CidadeMySql.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Cidades" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Entry x:Name="txtID" Placeholder="Digite o ID da cidade para pesquisa" />
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnPesquisar" Text="Pesquisar" HorizontalOptions="FillAndExpand" Clicked="btnPesquisar_Clicked" />
+            <Button x:Name="btnLimpar" Text="Limpar" HorizontalOptions="FillAndExpand" Clicked="btnLimpar_Clicked" />
+        </StackLayout>
+
+        <Entry x:Name="txtNome" Placeholder="Nome da cidade" />
+        <Entry x:Name="txtUF" Placeholder="UF da cidade" />
+
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnAdicionar" Text="Adicionar" HorizontalOptions="FillAndExpand" Clicked="btnAdicionar_Clicked" />
+            <Button x:Name="btnAtualizar" Text="Atualizar" HorizontalOptions="FillAndExpand" Clicked="btnAtualizar_Clicked" />
+            <Button x:Name="btnExcluir" Text="Excluir" HorizontalOptions="FillAndExpand" Clicked="btnExcluir_Clicked" />
+        </StackLayout>
+
+        <Button x:Name="btnFinalizar" Text="Finaliza o Aplicativo" Clicked="btnFinalizar_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>
