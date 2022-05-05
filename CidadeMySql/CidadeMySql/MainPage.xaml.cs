@@ -62,9 +62,25 @@ namespace CidadeMySql
             btnLimpar_Clicked(sender, e);
         }
 
-        private void btnExcluir_Clicked(object sender, EventArgs e)
+        private async void btnExcluir_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtID.Text))
+            {
+                DisplayAlert("Atenção", "Informar um ID para exclusão", "OK");
+                return;
+            }
 
+            var resp = await DisplayAlert("Exclusão", "Confirma a exclusão da cidade?", "Sim", "Não");
+
+            if (resp)
+            {
+                c = new Cidade
+                {
+                    id = int.Parse(txtID.Text),
+                };
+                c.Excluir();
+                btnLimpar_Clicked(sender, e);
+            }
         }
 
         private void btnFinalizar_Clicked(object sender, EventArgs e)

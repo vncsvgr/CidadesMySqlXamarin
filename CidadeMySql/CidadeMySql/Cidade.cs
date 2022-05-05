@@ -80,7 +80,24 @@ namespace CidadeMySql
             catch (Exception ex)
             {
                 await App.Current.MainPage.DisplayAlert("Erro", ex.Message, "OK");
+            }
+        }
 
+        public async void Excluir()
+        {
+            try
+            {
+                conexao = new MySqlConnection(strConexao);
+                conexao.Open();
+                comando = new MySqlCommand("delete from cidades where id = @id", conexao);
+                comando.Parameters.AddWithValue("@id", id);
+                comando.ExecuteNonQuery();
+                conexao.Close();
+                await App.Current.MainPage.DisplayAlert("Exclusão", "Cidade excluida com sucesso!", "OK");
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Erro", ex.Message, "OK");
             }
         }
     }
