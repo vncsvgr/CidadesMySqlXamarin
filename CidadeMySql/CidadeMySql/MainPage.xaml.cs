@@ -66,7 +66,7 @@ namespace CidadeMySql
         {
             if (string.IsNullOrEmpty(txtID.Text))
             {
-                DisplayAlert("Atenção", "Informar um ID para exclusão", "OK");
+                await DisplayAlert("Atenção", "Informar um ID para exclusão", "OK");
                 return;
             }
 
